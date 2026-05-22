@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Fitness Plan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<section class="exercise-module">
+    <h2>Exercise Recommendations</h2>
+
+    <label>Select Your Age Group:</label>
+    <select id="ageGroup">
+        <option value="teen">Kids / Teens</option>
+        <option value="adult">Adults (18–44)</option>
+        <option value="senior">45+</option>
+    </select>
+
+    <label>Select Workout Type:</label>
+    <select id="workoutType">
+        <option value="strength">Strength Training</option>
+        <option value="calisthenics">Calisthenics / Bodyweight</option>
+        <option value="mobility">Flexibility & Mobility</option>
+    </select>
+
+    <button class="interactive-btn" onclick="generatePlan()">
+        Show My Exercises
+    </button>
+
+    <div id="exerciseResult"></div>
+</section>
+   
+
+    <h2> Diet & Nutrition Module</h2>
+
+    <label>Select Your Goal:</label>
+    <br>
+    <select id="dietGoal">
+        <option value="weightLoss">Weight Loss</option>
+        <option value="muscleGain">Muscle Gain</option>
+        <option value="generalFitness">General Fitness</option>
+    </select>
+
+    <br>
+    <br>
+
+    <button onclick="generateDiet()">Get Nutrition Plan</button>
+
+    <div id="dietResult"></div>
+
+    <section class="calculator-section">
+        <h2> Fitness Calculators </h2>
+
+        <!-- BMI -->
+        <h3>BMI Calculator</h3>
+        <input type="number" id="height" placeholder="Height (inches)">
+        <input type="number" id="weight" placeholder="Weight (kg)">
+        <button onclick="calculateBMI()">Calculate BMI</button>
+        <div id="bmiResult"></div>
+
+    <br>
+
+        <!-- Calorie -->
+        <h3>Calorie Calculator</h3>
+        <input type="number" id="ageCal" placeholder="Age">
+        <input type="number" id="weightCal" placeholder="Weight (kg)">
+        <input type="number" id="heightCal" placeholder="Height (cm)">
+        <button onclick="calculateCalories()">Calculate Calories</button>
+        <div id="calorieResult"></div>
+
+        <br><br>
+
+        <!-- Protein -->
+        <h3>Protein Requirement Calculator</h3>
+        <input type="number" id="weightProtein" placeholder="Weight (kg)">
+        <button onclick="calculateProtein()">Calculate Protein</button>
+        <div id="proteinResult"></div>
+
+        <br><br>
+
+        <!-- Body Fat -->
+        <h3>Fat Percentage (Basic)</h3>
+        <input type="number" id="waist" placeholder="Waist (cm)">
+        <input type="number" id="neck" placeholder="Neck (cm)">
+        <button onclick="calculateFat()">Calculate Fat %</button>
+        <div id="fatResult"></div>
+</section>
+
+<section class="knowledge-section">
+    <h2> Knowledge Section</h2>
+
+    <button onclick="showKnowledge('myths')">Myths vs Facts</button>
+    <button onclick="showKnowledge('mistakes')">Beginner Mistakes</button>
+    <button onclick="showKnowledge('psychology')">Lifestyle Psychology</button>
+    <button onclick="showKnowledge('habits')">Consistency Habits</button>
+
+    <div id="knowledgeResult" class="knowledge-box"></div>
+</section>
+<!-- Health Safety & Awareness Section -->
+<section class="safety-section">
+    <h2>Health Safety & Awareness</h2>
+
+    <div class="accordion">
+        <button class="accordion-btn">Warm-Up Importance</button>
+        <div class="accordion-content">
+            <p>Warm-up muscles ko activate karta hai, blood flow increase karta hai aur injury risk kam karta hai. Workout se pehle 5–10 minutes light cardio aur stretching zaroor karein.</p>
+        </div>
+
+        <button class="accordion-btn">Rest & Recovery</button>
+        <div class="accordion-content">
+            <p>Muscles gym me nahi, rest ke time grow karte hain. Har week 1–2 rest days lein aur overtraining avoid karein.</p>
+        </div>
+
+        <button class="accordion-btn">Sleep & Stress Role</button>
+        <div class="accordion-content">
+            <p>7–8 hours ki proper sleep recovery aur hormone balance ke liye zaroori hai. High stress fat gain aur slow progress ka reason ban sakta hai.</p>
+        </div>
+
+        <button class="accordion-btn">Injury Prevention Basics</button>
+        <div class="accordion-content">
+            <p>Proper form use karein, gradually weight increase karein aur sharp pain ko ignore na karein. Pain ≠ gain.</p>
+        </div>
+
+        <button class="accordion-btn">When to Consult a Professional</button>
+        <div class="accordion-content">
+            <p>Severe pain, dizziness, breathing issues ya medical condition hone par certified trainer ya doctor se consult karein.</p>
+        </div>
+    </div>
+</section>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

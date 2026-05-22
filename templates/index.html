@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FITGUIDE</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    
+    
+    <!-- ⭐ Fitness Widget (Starting me) -->
+    <section class="hero-widget">
+        <div class="commonninja_component pid-2db8c1e1-f12e-439e-a741-7584a7eda70c"></div>
+    </section>
+
+
+    <section id="Use Profile">
+    <h2>Create Your Fitness Profile</h2>
+    <form action="/dashboard" method="POST"> 
+
+    <label>Age:</label>
+    <input type="number" id="age"><br>
+    <br>
+    <label>Weight (kg):</label>
+    <input type="number" id="weight"><br>
+    <br>
+    <label>Height (cm):</label>
+    <input type="number" id="height"><br>
+    <br>
+    <label>Activity Level:</label>
+    <select id="activityLevel">
+        <option value="sedentary">Sedentary</option>
+        <option value="light">Lightly Active</option>
+        <option value="moderate">Moderately Active</option>
+        <option value="active">Active</option>
+        <option value="veryActive">Very Active</option>
+    </select><br>
+    <br>
+    <label>Fitness Goal:</label>
+    <select id="goal">
+      <option value="fat">Fat  Loss</option>
+      <option value="muscle">Muscle Gain</option>
+      <option value="conditioning">Conditioning</option>
+      <option value="strength">Strength</option>
+      <option value="fit">General Fitness</option>
+    </select>
+    <button onclick="generateProfilePlan()">Get My Plan</button>
+
+
+    <div id="result"></div>
+  </section>
+  
+  
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<section class="hero-widget">
+    <script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
+
+</section>
+
+</form>
+</body>
+</html>
+
